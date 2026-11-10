@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import ServiceView, { serviceByHref } from "@/components/ServiceView";
 
 const panes = [
-  { title: "Sauzen", text: "Wanden en plafonds in de kleur die u kiest, of met ons advies." },
+  { title: "Sauzen", text: "Wanden sauzen in de kleur die u kiest, of met ons advies." },
   { title: "Behangen", text: "Behangwerkzaamheden als onderdeel van de wandafwerking." },
-  { title: "Glasvlies", text: "Glasvlies als strakke ondergrond voor een verdere afwerking." },
-  { title: "Structuur", text: "Een structuur aanbrengen, als u een andere uitstraling zoekt." },
+  { title: "Glasvlies", text: "Glasvlies, naast sauzen, behang en structuur." },
+  { title: "Structuur", text: "Een structuur aanbrengen, als u de wand zo wilt." },
+  { title: "Plafond", text: "Ook wand- en plafondafwerking horen bij het werk." },
+  { title: "Bewezen kwaliteit", text: "Wij gebruiken alleen materialen van bewezen kwaliteit." },
 ];
 
 export const metadata: Metadata = {
@@ -17,8 +20,8 @@ export default function Page() {
   return (
     <ServiceView service={serviceByHref("/wandafwerking")}>
       <section data-section="aanpak" className="wrap pb-14">
-        <h2 className="text-[32px] leading-tight">Sauzen, behangen, glasvlies en structuur</h2>
-        <div className="mt-6 grid gap-1.5 bg-lood sm:grid-cols-2">
+        <h2 className="max-w-3xl text-[32px] leading-tight md:text-[40px]">Sauzen, behangen, glasvlies en structuur</h2>
+        <div className="mt-6 grid gap-1.5 bg-lood sm:grid-cols-2 lg:grid-cols-3">
           {panes.map((pane) => (
             <div key={pane.title} data-tone="violet" className="pane p-5">
               <span aria-hidden="true" className="mb-4 block size-5 bg-violet shadow-[inset_0_0_0_1px_#1D1D1B]" />
@@ -27,7 +30,11 @@ export default function Page() {
             </div>
           ))}
         </div>
-        <p className="mt-6 max-w-2xl text-ink">Ook wand- en plafondafwerking en behangwerkzaamheden. Alleen materialen van bewezen kwaliteit.</p>
+        <p className="mt-6">
+          <Link href="/binnenschilderwerk" className="font-semibold text-link underline underline-offset-4">
+            Ook binnenschilderwerk
+          </Link>
+        </p>
       </section>
     </ServiceView>
   );

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { content } from "@/content";
-import { LeadList } from "@/components/ui";
 import CtaBand from "@/components/CtaBand";
 
 export const metadata: Metadata = {
@@ -15,14 +14,24 @@ export default function Page() {
   return (
     <article>
       <header data-section="intro" className="wrap py-12 md:py-16">
-        <h1 className="text-[38px] leading-[1.08] sm:text-[44px] md:text-[60px]">Over ons</h1>
+        <p className="label text-ink">Enter, sinds 1989</p>
+        <h1 className="mt-4 text-[38px] leading-[1.08] sm:text-[44px] md:text-[60px]">Over ons</h1>
         <p className="mt-5 max-w-3xl">{company.history}</p>
+        <p className="mt-4 max-w-3xl">
+          Roessink is schildersbedrijf, behangersbedrijf en glaszettersbedrijf. Het werk is er voor particulieren, bedrijven en monumentale panden in Enter en de regio Twente. Eigenaar is {company.owner}.
+        </p>
       </header>
 
       <section data-section="werkzaamheden" className="wrap pb-12">
-        <h2 className="text-[32px] leading-tight">Werkzaamheden</h2>
-        <div className="mt-5 max-w-2xl">
-          <LeadList items={content.werkzaamheden} />
+        <h2 className="text-[32px] leading-tight md:text-[40px]">Werkzaamheden</h2>
+        <p className="mt-4 max-w-2xl text-ink">Zo staat het werk op een rij: schilderen, glas, wanden, behang, restauratie, advies en muurschilderingen.</p>
+        <div className="mt-6 grid gap-1.5 bg-lood sm:grid-cols-2">
+          {content.werkzaamheden.map((item) => (
+            <div key={item} className="bg-papier p-5">
+              <span aria-hidden="true" className="mb-3 block size-3 bg-lood" />
+              <p className="font-slab text-xl leading-snug">{item}</p>
+            </div>
+          ))}
         </div>
       </section>
 

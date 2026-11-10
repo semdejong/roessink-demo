@@ -281,11 +281,18 @@ h3,
 }
 
 .hero-panes {
+  display: none;
   grid-template-columns: repeat(6, 20px);
   gap: 6px;
   width: max-content;
   background: var(--lood);
   padding: 6px;
+}
+
+@media (min-width: 640px) {
+  .hero-panes {
+    display: grid;
+  }
 }
 
 .border-panes {

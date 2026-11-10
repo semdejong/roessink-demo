@@ -26,7 +26,7 @@ export default function HeroToplicht() {
           <div className="mt-8">
             <CtaPair />
           </div>
-          <div className="hero-panes mt-10 hidden sm:grid" aria-hidden="true">
+          <div className="hero-panes mt-10" aria-hidden="true">
             {corner.map((color, index) => (
               <span key={`${color}-${index}`} className="size-5" style={{ background: color }} />
             ))}

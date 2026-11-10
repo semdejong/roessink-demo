@@ -460,6 +460,30 @@ export const content = {
       { label: "Flickr", href: "https://www.flickr.com/photos/roessinkschilderwerken/albums" },
     ],
   },
+
+  voorWie: [
+    {
+      title: "Particulieren",
+      text: "Schilderwerk, beglazing en wandafwerking voor uw woning, in Enter en de regio Twente.",
+      tone: "blauw" as Tone,
+    },
+    {
+      title: "Bedrijven",
+      text: "Zakelijk werk binnen en buiten: schilderwerk, glas, wanden en vloercoatings.",
+      tone: "oranje" as Tone,
+    },
+    {
+      title: "Monumentale panden",
+      text: "Restauratiewerk en monumentenglas horen bij het werk aan monumentale panden.",
+      tone: "groen" as Tone,
+    },
+  ],
+
+  weer: [
+    { title: "Felle zon", text: "Het buitenschilderwerk moet daartegen bestand zijn." },
+    { title: "Heftige regen", text: "Kwaliteit en duurzaamheid horen bij het Nederlandse weer." },
+    { title: "Vrieskou", text: "Het werk wordt van A tot Z met die omstandigheden voor ogen uitgevoerd." },
+  ],
 };
 
 export type Content = typeof content;
