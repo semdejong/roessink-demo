@@ -14,6 +14,14 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [{ protocol: "https", hostname: "**" }],
   },
+  async redirects() {
+    return [
+      { source: "/onderhoud-nl", destination: "/over-ons#onderhoud-nl", permanent: true },
+      { source: "/schilderscool", destination: "/over-ons#schilderscool", permanent: true },
+      { source: "/projecten/:path+", destination: "/projecten", permanent: true },
+      { source: "/index.php", destination: "/", permanent: true },
+    ];
+  },
   // Demo's: nooit indexeren, op elke route.
   async headers() {
     return [

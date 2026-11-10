@@ -1,14 +1,33 @@
 import type { Metadata, Viewport } from "next";
-import { Geist } from "next/font/google";
+import { Libre_Franklin, Zilla_Slab } from "next/font/google";
 import type { CSSProperties } from "react";
 import "./globals.css";
 import { content } from "@/content";
 import SleadsBadge from "@/components/SleadsBadge";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import MobileBar from "@/components/MobileBar";
+import RiseOnScroll from "@/components/RiseOnScroll";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const zilla = Zilla_Slab({
+  subsets: ["latin", "latin-ext"],
+  weight: "700",
+  variable: "--font-zilla",
+  display: "swap",
+});
+
+const libre = Libre_Franklin({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600"],
+  variable: "--font-libre",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: content.seo.title,
+  title: {
+    default: content.seo.title,
+    template: "%s | Roessink Schilderwerken",
+  },
   description: content.seo.description,
   robots: {
     index: false,
@@ -16,7 +35,6 @@ export const metadata: Metadata = {
     nocache: true,
     googleBot: { index: false, follow: false, noimageindex: true },
   },
-  icons: content.company.logo ? { icon: content.company.logo } : undefined,
 };
 
 export const viewport: Viewport = { themeColor: content.colors.primary };
@@ -37,12 +55,18 @@ const themeVars = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang={content.seo.lang} style={themeVars} className={`${geistSans.variable} h-full scroll-smooth antialiased`}>
+    <html lang={content.seo.lang} style={themeVars} className={`${zilla.variable} ${libre.variable} h-full antialiased`}>
       <head>
         <script async src={TRACKER_SRC} data-demo={content.slug} data-endpoint={TRACKER_ENDPOINT} />
       </head>
       <body className="min-h-full flex flex-col">
-        {children}
+        <Header nav={content.nav} phone={content.contact.phoneDisplay} phoneHref={content.contact.phoneHref} />
+        <main id="inhoud" className="flex-1">
+          {children}
+        </main>
+        <Footer />
+        <MobileBar />
+        <RiseOnScroll />
         <SleadsBadge />
       </body>
     </html>

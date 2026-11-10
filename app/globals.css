@@ -1,26 +1,335 @@
 @import "tailwindcss";
 
 :root {
-  --brand: #1d4ed8;
+  --lood: #1d1d1b;
+  --papier: #f6f4ef;
+  --kalk: #ece8df;
+  --wit: #ffffff;
+  --ink: #55524c;
+  --link: #1f4e9e;
+  --rood: #e71522;
+  --oranje: #ed631c;
+  --geel: #f6e513;
+  --groen: #36af30;
+  --blauw: #2a62c5;
+  --violet: #74428f;
+  --tint-rood: #f4d5d2;
+  --tint-oranje: #f5e0d1;
+  --tint-geel: #f6f2d0;
+  --tint-groen: #dbead4;
+  --tint-blauw: #d9e0e9;
+  --tint-violet: #e4dbe2;
+  --brand: #1d1d1b;
   --brand-fg: #ffffff;
-  --accent: #f59e0b;
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --muted: #f1f5f9;
+  --accent: #2a62c5;
+  --background: #f6f4ef;
+  --foreground: #1d1d1b;
+  --muted: #ece8df;
 }
 
 @theme inline {
+  --color-lood: var(--lood);
+  --color-papier: var(--papier);
+  --color-kalk: var(--kalk);
+  --color-wit: var(--wit);
+  --color-ink: var(--ink);
+  --color-link: var(--link);
+  --color-rood: var(--rood);
+  --color-oranje: var(--oranje);
+  --color-geel: var(--geel);
+  --color-groen: var(--groen);
+  --color-blauw: var(--blauw);
+  --color-violet: var(--violet);
   --color-brand: var(--brand);
   --color-brand-fg: var(--brand-fg);
   --color-accent: var(--accent);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-libre), "Libre Franklin", sans-serif;
+  --font-slab: var(--font-zilla), "Zilla Slab", Georgia, serif;
+}
+
+html {
+  scroll-padding-top: 5.75rem;
+  background: var(--papier);
+  overflow-x: clip;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--papier);
+  color: var(--lood);
   font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 400;
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+.font-slab {
+  font-family: var(--font-slab);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.wrap {
+  width: min(1120px, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+:focus-visible {
+  outline: 3px solid #2a62c5;
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 80;
+  background: var(--geel);
+  color: var(--lood);
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+}
+
+.skip:focus {
+  top: 1rem;
+}
+
+.knoop {
+  width: 12px;
+  height: 12px;
+  background: var(--lood);
+  box-shadow: inset 0 0 0 1px var(--papier);
+  flex: none;
+}
+
+.pane {
+  color: var(--lood);
+  background: var(--papier);
+  transition: background-color 200ms linear, color 200ms linear;
+}
+
+.pane[data-tone="blauw"] { background: var(--tint-blauw); }
+.pane[data-tone="oranje"] { background: var(--tint-oranje); }
+.pane[data-tone="groen"] { background: var(--tint-groen); }
+.pane[data-tone="violet"] { background: var(--tint-violet); }
+.pane[data-tone="rood"] { background: var(--tint-rood); }
+.pane[data-tone="geel"] { background: var(--tint-geel); }
+
+@media (hover: hover) {
+  .pane[data-tone="blauw"]:hover { background: var(--blauw); color: #fff; }
+  .pane[data-tone="oranje"]:hover { background: var(--oranje); color: var(--lood); }
+  .pane[data-tone="groen"]:hover { background: var(--groen); color: var(--lood); }
+  .pane[data-tone="violet"]:hover { background: var(--violet); color: #fff; }
+  .pane[data-tone="rood"]:hover { background: var(--rood); color: #fff; }
+  .pane[data-tone="geel"]:hover { background: var(--geel); color: var(--lood); }
+}
+
+.pane[data-tone="blauw"]:focus-visible { background: var(--blauw); color: #fff; }
+.pane[data-tone="oranje"]:focus-visible { background: var(--oranje); color: var(--lood); }
+.pane[data-tone="groen"]:focus-visible { background: var(--groen); color: var(--lood); }
+.pane[data-tone="violet"]:focus-visible { background: var(--violet); color: #fff; }
+.pane[data-tone="rood"]:focus-visible { background: var(--rood); color: #fff; }
+.pane[data-tone="geel"]:focus-visible { background: var(--geel); color: var(--lood); }
+
+.diensten-raam {
+  display: grid;
+  gap: 6px;
+  background: var(--lood);
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "buiten"
+    "binnen"
+    "beglazing"
+    "wand"
+    "vloer"
+    "advies";
+}
+
+.area-buiten { grid-area: buiten; }
+.area-binnen { grid-area: binnen; }
+.area-beglazing { grid-area: beglazing; }
+.area-wand { grid-area: wand; }
+.area-vloer { grid-area: vloer; }
+.area-advies { grid-area: advies; }
+
+@media (min-width: 900px) {
+  .diensten-raam {
+    grid-template-columns: 1.25fr 0.95fr 1.15fr;
+    grid-template-rows: minmax(190px, auto) minmax(170px, auto) minmax(150px, auto);
+    grid-template-areas:
+      "buiten binnen beglazing"
+      "buiten wand beglazing"
+      "vloer advies advies";
+  }
+}
+
+.glass-window {
+  display: grid;
+  gap: 6px;
+  background: var(--lood);
+  grid-template-columns: 1fr;
+}
+
+.g-iso { grid-area: auto; }
+.g-float { grid-area: auto; }
+.g-sier { grid-area: auto; }
+.g-lood { grid-area: auto; }
+.g-monument { grid-area: auto; }
+.g-inbraak { grid-area: auto; }
+.g-brand { grid-area: auto; }
+
+@media (min-width: 800px) {
+  .glass-window {
+    grid-template-columns: 1.35fr 1fr 1fr 1.05fr;
+    grid-template-areas:
+      "iso iso float sier"
+      "lood monument inbraak brand";
+  }
+  .g-iso { grid-area: iso; }
+  .g-float { grid-area: float; }
+  .g-sier { grid-area: sier; }
+  .g-lood { grid-area: lood; }
+  .g-monument { grid-area: monument; }
+  .g-inbraak { grid-area: inbraak; }
+  .g-brand { grid-area: brand; }
+
+  }
+
+.glass-mini {
+  display: grid;
+  gap: 6px;
+  background: var(--lood);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 700px) {
+  .glass-mini {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.tex-float {
+  background: #f7f6f2;
+}
+
+.tex-iso {
+  background: #f7f6f2;
+  box-shadow:
+    inset 0 0 0 2px #1d1d1b,
+    inset 0 0 0 7px #f6f4ef,
+    inset 0 0 0 9px #1d1d1b;
+}
+
+.tex-sier {
+  background-color: #dbead4;
+  background-image: radial-gradient(circle, #1d1d1b 0.55px, transparent 0.7px);
+  background-size: 7px 7px;
+}
+
+.tex-lood {
+  background-color: #f6f4ef;
+  background-image:
+    linear-gradient(to right, #1d1d1b 2px, transparent 2px),
+    linear-gradient(to bottom, #1d1d1b 2px, transparent 2px);
+  background-size: 22px 22px, 22px 22px;
+}
+
+.tex-monument {
+  background-color: #f3f1ea;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0 6px,
+    rgba(29, 29, 27, 0.07) 6px 7px,
+    transparent 7px 13px,
+    rgba(29, 29, 27, 0.11) 13px 14px,
+    transparent 14px 22px,
+    rgba(29, 29, 27, 0.05) 22px 23px
+  );
+}
+
+.tex-inbraak {
+  background: #f6f4ef;
+  box-shadow:
+    inset 0 0 0 5px #1d1d1b,
+    inset 0 0 0 8px #f6f4ef,
+    inset 0 0 0 12px #1d1d1b;
+}
+
+.tex-brand {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #f6f4ef 0 8px,
+    #e4dbe2 8px 12px,
+    #f6f4ef 12px 20px,
+    #f4d5d2 20px 24px
+  );
+}
+
+.hero-panes {
+  grid-template-columns: repeat(6, 20px);
+  gap: 6px;
+  width: max-content;
+  background: var(--lood);
+  padding: 6px;
+}
+
+.border-panes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  background: var(--lood);
+}
+
+summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+input,
+textarea,
+select {
+  border-radius: 0;
+  font: inherit;
+  color: var(--lood);
+  background: var(--wit);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pane,
+  .brand-logo {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise-wait {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  .rise-in {
+    opacity: 1;
+    transform: none;
+    transition: opacity 500ms ease, transform 500ms ease;
+  }
 }
