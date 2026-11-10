@@ -8,7 +8,7 @@ export default function Reviews() {
       <div className="mt-10 grid gap-6 md:grid-cols-3">
         {reviews.items.map((r) => (
           <figure key={r.name} className="rounded-2xl border border-black/5 p-6 shadow-sm">
-            <div className="text-accent" aria-label={`${r.rating} van 5 sterren`}>{"★".repeat(r.rating)}</div>
+            {r.rating ? <div className="text-accent" aria-label={`${r.rating} van 5 sterren`}>{"★".repeat(r.rating)}</div> : null}
             <blockquote className="mt-3 leading-relaxed opacity-85">“{r.text}”</blockquote>
             <figcaption className="mt-4 text-sm font-semibold">{r.name}</figcaption>
           </figure>
