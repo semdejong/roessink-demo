@@ -37,7 +37,9 @@ export default function Page() {
             </a>
             <a href={`mailto:${contact.email}`} data-cta="mail" className="flex min-h-24 flex-col justify-center bg-kalk px-6 py-5 text-lood no-underline">
               <span className="label">E-mail</span>
-              <span className="mt-1 break-all font-slab text-2xl">{contact.email}</span>
+              <span className="mt-1 font-slab text-xl leading-tight sm:text-2xl">
+                info@<wbr />roessinkschilderwerken.nl
+              </span>
             </a>
           </div>
           <a href={contact.mapsUrl} target="_blank" rel="noopener" className="bg-geel p-6 text-lood no-underline md:p-8">

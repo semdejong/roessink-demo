@@ -34,7 +34,7 @@ export default function Header({
   }, [open]);
 
   return (
-    <header data-section="header" className="sticky top-0 z-40 bg-lood text-wit">
+    <header data-section="header" className="sticky top-0 z-50 bg-lood text-wit">
       <a href="#inhoud" className="skip">
         Naar inhoud
       </a>
@@ -123,16 +123,12 @@ export default function Header({
       </div>
 
       <div className="relative h-1.5 bg-lood">
-        <Soldeerknoop className="absolute top-1/2 left-4 -translate-x-1/2 -translate-y-1/2" />
-        <Soldeerknoop className="absolute top-1/2 left-[232px] hidden -translate-x-1/2 -translate-y-1/2 lg:block" />
-        <Soldeerknoop className="absolute top-1/2 left-[42%] hidden -translate-x-1/2 -translate-y-1/2 lg:block" />
-        <Soldeerknoop className="absolute top-1/2 left-[54%] hidden -translate-x-1/2 -translate-y-1/2 lg:block" />
-        <Soldeerknoop className="absolute top-1/2 left-[66%] hidden -translate-x-1/2 -translate-y-1/2 lg:block" />
-        <Soldeerknoop className="absolute top-1/2 right-4 translate-x-1/2 -translate-y-1/2" />
+        <Soldeerknoop className="absolute top-1/2 left-5 -translate-x-1/2 -translate-y-1/2" />
+        <Soldeerknoop className="absolute top-1/2 right-5 translate-x-1/2 -translate-y-1/2" />
       </div>
 
       {open && (
-        <nav id="mobiel-menu" aria-label="Mobiel menu" className="absolute inset-x-0 top-full z-40 max-h-[calc(100dvh-4.5rem)] overflow-y-auto bg-lood pb-28 lg:hidden">
+        <nav id="mobiel-menu" aria-label="Mobiel menu" className="fixed inset-x-0 top-[4.6rem] bottom-0 z-[60] overflow-y-auto bg-lood pb-8 lg:hidden">
           <ul className="px-2 py-3">
             {nav.map((item) => (
               <li key={item.href} className="border-t border-wit/15 first:border-t-0">

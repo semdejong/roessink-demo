@@ -35,7 +35,8 @@ export default function Page() {
         </div>
       </section>
 
-      <section data-section="bussen" className="wrap grid gap-1.5 bg-lood pb-14 md:grid-cols-[minmax(0,655px)_minmax(0,280px)]">
+      <section data-section="bussen" className="wrap pb-14">
+        <div className="grid max-w-full gap-1.5 bg-lood md:w-max md:grid-cols-[minmax(0,655px)_280px]">
         <figure className="bg-papier" style={{ maxWidth: about.imageWidth }}>
           <Image
             src={about.image}
@@ -54,9 +55,10 @@ export default function Page() {
             fill
             unoptimized
             sizes="280px"
-            className="object-cover object-[18%_42%]"
+            className="origin-left scale-[1.45] object-cover object-left"
           />
         </figure>
+        </div>
       </section>
 
       <section id={memberships.onderhoud.id} data-section="onderhoud-nl" className="scroll-mt-28 bg-kalk">

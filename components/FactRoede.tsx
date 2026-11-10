@@ -10,7 +10,21 @@ export default function FactRoede() {
         <div className="grid grid-cols-4 gap-3">
           {facts.map((fact) => (
             <p key={fact} className="label text-center leading-snug">
-              {fact}
+              {fact === "Erkend Schilder^sCOOL-leerbedrijf" ? (
+                <>
+                  Erkend
+                  <br />
+                  Schilder^sCOOL-leerbedrijf
+                </>
+              ) : fact === "Opgericht door Gé, sinds 2006 Jeroen" ? (
+                <>
+                  Opgericht door Gé,
+                  <br />
+                  sinds 2006 Jeroen
+                </>
+              ) : (
+                fact
+              )}
             </p>
           ))}
         </div>

@@ -19,12 +19,8 @@ export function StoryPanes({
       <h2 className="max-w-3xl text-[32px] leading-tight md:text-[40px]">{heading}</h2>
       {intro && <p className="mt-4 max-w-2xl text-ink">{intro}</p>}
       <div className="mt-6 grid gap-1.5 bg-lood sm:grid-cols-2 lg:grid-cols-3">
-        {panes.map((pane, index) => (
-          <div
-            key={pane.title}
-            data-tone={tone}
-            className={`pane p-5 sm:p-6 ${index === 0 ? "sm:col-span-2 lg:col-span-1" : ""}`}
-          >
+        {panes.map((pane) => (
+          <div key={pane.title} data-tone={tone} className="pane p-5 sm:p-6">
             <span aria-hidden="true" className="mb-4 block size-5 shadow-[inset_0_0_0_1px_#1D1D1B]" style={{ background: glass }} />
             <h3 className="font-slab text-2xl leading-tight">{pane.title}</h3>
             <p className="mt-2 text-[17px] leading-snug">{pane.text}</p>

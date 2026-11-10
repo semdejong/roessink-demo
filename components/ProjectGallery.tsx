@@ -46,12 +46,12 @@ export default function ProjectGallery({
 
   return (
     <>
-      <div className={small ? "flex flex-wrap gap-1.5 bg-lood" : "grid gap-1.5 bg-lood sm:grid-cols-2"}>
+      <div className={small ? "flex flex-wrap gap-1.5" : "grid items-stretch gap-1.5 sm:grid-cols-2"}>
         {images.map((image, imageIndex) => (
-          <figure key={image.src} className="bg-papier" style={{ maxWidth: image.width }}>
+          <figure key={image.src} className="bg-lood p-1.5" style={{ maxWidth: image.width }}>
             <button
               type="button"
-              className="block w-full text-left"
+              className="block w-full bg-papier text-left"
               aria-label={`Vergroot: ${image.alt}`}
               onClick={(event) => {
                 triggerRef.current = event.currentTarget;
@@ -64,7 +64,7 @@ export default function ProjectGallery({
                 width={image.width}
                 height={image.height}
                 unoptimized
-                className="block h-auto w-full"
+                className={small ? "block h-auto w-full" : "block aspect-[4/3] w-full object-cover"}
                 style={{ maxWidth: image.width }}
               />
             </button>

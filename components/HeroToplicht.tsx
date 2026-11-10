@@ -17,7 +17,7 @@ export default function HeroToplicht() {
   return (
     <section data-section="hero" className="bg-papier">
       <div className="mx-auto grid max-w-[1180px] lg:grid-cols-2 lg:items-start">
-        <div className="px-5 py-10 md:py-14 lg:py-16 lg:pr-10 lg:pl-6">
+        <div className="flex flex-col px-5 py-10 max-lg:min-h-[calc(100svh-8.25rem)] md:py-14 lg:min-h-0 lg:py-16 lg:pr-10 lg:pl-6">
           <p className="label text-ink">Schildersbedrijf in de regio Twente</p>
           <h1 className="mt-4 max-w-[12em] text-[40px] leading-[1.08] sm:text-[44px] lg:text-[64px]">
             {hero.title}
@@ -26,7 +26,7 @@ export default function HeroToplicht() {
           <div className="mt-8">
             <CtaPair />
           </div>
-          <div className="hero-panes mt-10" aria-hidden="true">
+          <div className="hero-panes mt-auto hidden pt-10 sm:grid" aria-hidden="true">
             {corner.map((color, index) => (
               <span key={`${color}-${index}`} className="size-5" style={{ background: color }} />
             ))}

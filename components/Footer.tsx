@@ -50,8 +50,8 @@ export default function Footer() {
               </a>
             </p>
             <p>
-              <a href={`mailto:${contact.email}`} data-cta="mail" className="inline-flex min-h-11 items-center break-all hover:underline">
-                {contact.email}
+              <a href={`mailto:${contact.email}`} data-cta="mail" className="inline-flex min-h-11 items-center hover:underline">
+                info@<wbr />roessinkschilderwerken.nl
               </a>
             </p>
             <p>
@@ -109,7 +109,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="wrap flex flex-col gap-3 py-6 pb-36 text-sm md:flex-row md:items-center md:justify-between md:py-6 md:pr-0 md:pb-8 md:pl-36">
+      <div className="wrap flex flex-col gap-3 py-6 pb-36 text-sm md:flex-row md:items-center md:justify-between md:py-6 md:pb-8">
         <p>© {content.company.name}</p>
         <div className="flex flex-wrap gap-x-5 gap-y-2">
           {footer.socials.map((social) => (

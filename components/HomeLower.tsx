@@ -118,7 +118,7 @@ export function AdviceBand() {
       <div className="h-1.5 bg-lood" aria-hidden="true" />
       <div className="mx-auto grid max-w-[1180px] md:grid-cols-[minmax(0,220px)_6px_minmax(0,1fr)]">
         <div className="bg-geel px-5 py-10 text-lood">
-          <span aria-hidden="true" className="mb-6 block size-[22px] shadow-[inset_0_0_0_1px_#1D1D1B]" style={{ background: "#F6E513" }} />
+          <span aria-hidden="true" className="mb-6 block size-[22px] bg-lood" />
           <h2 className="text-[32px] leading-tight">Wij adviseren u graag</h2>
         </div>
         <div className="hidden bg-lood md:block" aria-hidden="true" />

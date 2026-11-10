@@ -7,7 +7,6 @@ import SleadsBadge from "@/components/SleadsBadge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBar from "@/components/MobileBar";
-import RiseOnScroll from "@/components/RiseOnScroll";
 
 const zilla = Zilla_Slab({
   subsets: ["latin", "latin-ext"],
@@ -66,7 +65,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </main>
         <Footer />
         <MobileBar />
-        <RiseOnScroll />
         <SleadsBadge />
       </body>
     </html>

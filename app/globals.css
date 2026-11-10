@@ -80,8 +80,10 @@ h3,
   font-weight: 600;
   font-size: 12px;
   line-height: 1.35;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  hyphens: none;
+  word-break: keep-all;
 }
 
 .wrap {
@@ -107,6 +109,11 @@ h3,
 
 .skip:focus {
   top: 1rem;
+}
+
+body:has(#mobiel-menu) [data-section="mobiele-balk"],
+body:has(#mobiel-menu) a[aria-label^="Concept door Sleads"] {
+  visibility: hidden;
 }
 
 .knoop {
@@ -281,18 +288,11 @@ h3,
 }
 
 .hero-panes {
-  display: none;
   grid-template-columns: repeat(6, 20px);
   gap: 6px;
   width: max-content;
   background: var(--lood);
   padding: 6px;
-}
-
-@media (min-width: 640px) {
-  .hero-panes {
-    display: grid;
-  }
 }
 
 .border-panes {
@@ -328,15 +328,3 @@ select {
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .rise-wait {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-
-  .rise-in {
-    opacity: 1;
-    transform: none;
-    transition: opacity 500ms ease, transform 500ms ease;
-  }
-}
