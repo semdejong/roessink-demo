@@ -376,7 +376,7 @@ export const content = {
       id: "schilderscool",
       title: "Erkend Schilder^sCOOL-leerbedrijf",
       text: "Schilder^sCOOL is het opleidingsbedrijf van en voor de bedrijfstak schilderen en onderhoud.",
-      logo: "/img/keurmerken/schilderscool.png",
+      logo: "/img/keurmerken/schilderscool-lood.png",
       logoAlt: "Schilder^sCOOL",
       width: 183,
       height: 97,

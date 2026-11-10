@@ -48,14 +48,14 @@ export default function Page() {
             style={{ maxWidth: about.imageWidth }}
           />
         </figure>
-        <figure className="relative w-full max-w-[280px] overflow-hidden bg-papier" style={{ aspectRatio: "3 / 4" }}>
+        <figure className="relative aspect-[4/3] w-full overflow-hidden bg-papier md:aspect-auto md:min-h-full md:max-w-[280px]">
           <Image
             src={about.sideImage}
             alt={about.sideAlt}
             fill
             unoptimized
             sizes="280px"
-            className="origin-left scale-[1.45] object-cover object-left"
+            className="origin-left scale-[1.3] object-cover object-[0%_55%] md:scale-[1.45] md:object-left"
           />
         </figure>
         </div>
